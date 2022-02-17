@@ -8,7 +8,7 @@ public class Main {
                         + "[a]-Vermelho\n[b]-Azul\n[c]-marrom\n";
 
         String questao2 = "Qual é o tomate é?\n"
-                        + "[a]-frutas\n[b]-legumes\n[c]-vegetais\n";
+                        + "[a]-fruta\n[b]-legume\n[c]-vegetal\n";
 
         Questao [] questoes = {new Questao(questao1,"b"),
                                new Questao(questao2, "b")};
@@ -19,6 +19,11 @@ public class Main {
     }
 
     public static void fazerTeste(Questao [] questoes){
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite seu nome: ");
+        String nome = sc.next();
+
         int pontuacao = 0;
         Scanner respostaUsuario = new Scanner(System.in);
 
@@ -29,7 +34,16 @@ public class Main {
                 pontuacao++;
             }
         }
+        int nQuestoes = questoes.length;
 
-        System.out.println("Você acertou " + pontuacao + "/" + questoes.length);
+        System.out.println("");
+        System.out.println("");
+        System.out.println("|------------------------------------------|");
+        System.out.println("| Usuário " + nome);
+        System.out.println("|------------------------------------------|");
+        System.out.println("| Acertos " + pontuacao);
+        System.out.println("|------------------------------------------|");
+        System.out.println("| Erros " + ( nQuestoes-pontuacao ));
+        System.out.println("|------------------------------------------|");
     }
 }

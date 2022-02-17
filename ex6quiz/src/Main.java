@@ -11,7 +11,7 @@ public class Main {
                         + "[a]-fruta\n[b]-legume\n[c]-vegetal\n";
 
         Questao [] questoes = {new Questao(questao1,"b"),
-                               new Questao(questao2, "b")};
+                               new Questao(questao2, "a")};
 
                         fazerTeste(questoes);
 
@@ -30,8 +30,14 @@ public class Main {
         for(int i = 0;i < questoes.length;i++){
             System.out.println(questoes[i].pergunta);
             String respostas = respostaUsuario.nextLine();
+
             if(respostas.equals(questoes[i].resposta)){
+                System.out.println("Você acertou!");
+                System.out.println("");
                 pontuacao++;
+            }else{
+                System.out.println("Você errou!");
+                System.out.println("");
             }
         }
         int nQuestoes = questoes.length;
